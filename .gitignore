@@ -1,0 +1,40 @@
+# ===== 不进入仓库 =====
+
+# 参考视频与原始表格（大文件 / 本地素材）
+*.mp4
+*.mkv
+*.mov
+参考*.xlsx
+序列*.mp4
+
+# 节奏条工作室本体（另一个项目）
+RhythmBar-Studio-for-FapHero-1.1.1/
+rbar_settings.json
+Install Python dependencies.bat
+
+# 分析脚本与中间产物
+_analysis/
+_video_analysis/
+*.spec
+debug.log
+
+# 构建产物（exe 走 Releases）
+dist/
+build/
+build_tmp/
+
+# 旧版文档（只保留 docs/ 下的 v0.9）
+BeatBar 难度量化评定 v0.[1-8].md
+
+# ===== 语言 / 环境 =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ===== 杂项 =====
+.pytest_cache/
+.DS_Store
+Thumbs.db
+*.log

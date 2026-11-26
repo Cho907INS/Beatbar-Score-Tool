@@ -1,0 +1,7 @@
+# name: my work
+# bpm: 128
+# total: 900
+start,end,beats,per8
+0,15,0,
+15,46,62,
+46,76,88,13
