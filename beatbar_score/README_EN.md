@@ -1,4 +1,4 @@
-# BeatBar Difficulty Scorer
+﻿# BeatBar Difficulty Scorer
 
 A repeatable, checkable difficulty rating for **BeatBar / FapHero / HMV** works.
 
@@ -191,6 +191,41 @@ A full derivation, including why each parameter has the value it does, is in
 
 ---
 
+## Help make it more accurate
+
+The model currently rests on **one anchor** (SBT 06 at 12:20) and very few measured
+works. Every additional data point makes the rating more trustworthy. Three things
+help, in order of value:
+
+### 1. Actual challenge results — the most valuable thing you can give
+
+> "I lasted 3:40 on *Bigmoney*" · "*Rezorecta* — cleared it" · "lost at 6:20 on *PornoR*"
+
+- work name, how long you lasted (or "cleared"), roughly when you tried
+- **several people on the same work** is worth far more than many works from one person
+- anonymous is fine — no name, no personal detail needed
+
+This is what allows the model to be **validated**. At the moment it has a single
+anchor, so nobody can say whether the ordering is actually right. If the scores cannot
+predict who fails first, the model is wrong and needs fixing — and that is exactly the
+kind of feedback this project needs.
+
+### 2. Segment beat tables
+
+Any work you can measure. Use the format described above; even a coarse table
+(30-second segments) is useful, and `per8` improves it further. Tables are merged into
+`beatbar_score/data/` so everyone gets the scores.
+
+### 3. Scores that feel wrong
+
+If a score badly mismatches your experience, open an issue and say which work and why.
+Outliers are how modelling errors surface — a single counter-example is more useful
+than ten agreements.
+
+**How to submit:** open an [issue](../../../issues) (templates are provided) or send a
+pull request adding your CSV to `beatbar_score/data/`. Data is used only for
+calibration; nothing personal is stored.
+
 ## Known limitations
 
 | Item | Note |
@@ -233,3 +268,4 @@ Produces `dist\BeatBarScore.exe` (single file, no Python required).
 ## License
 
 MIT
+

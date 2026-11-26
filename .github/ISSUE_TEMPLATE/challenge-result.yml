@@ -1,0 +1,51 @@
+name: Challenge result
+description: How long you lasted on a work — this is what validates the model.
+title: "[Result] <work name> — <time>"
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks — this is the most useful kind of data this project can get.
+        **Anonymous is fine.** Please don't include anything personally identifying.
+
+        If several people tried the same work, please post one issue per person
+        (or list them in one issue as separate lines).
+  - type: input
+    id: work
+    attributes:
+      label: Work
+      description: Name of the BeatBar / FapHero / HMV
+      placeholder: Bigmoney
+    validations:
+      required: true
+  - type: input
+    id: duration
+    attributes:
+      label: How long did you last?
+      description: mm:ss, or "cleared" if you finished it
+      placeholder: "3:40"
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Outcome
+      options:
+        - Lost (could not hold back)
+        - Cleared it
+        - Stopped / gave up
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context (optional)
+      description: Roughly when you tried, how you felt that day, whether it was a first attempt
+      placeholder: Tried it last week, second attempt, was already tired.
+  - type: input
+    id: score
+    attributes:
+      label: Score shown by the tool (optional)
+      description: The S value, if you scored the work
+      placeholder: "42.4"

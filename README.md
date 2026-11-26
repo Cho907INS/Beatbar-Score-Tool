@@ -51,6 +51,20 @@ are also accepted directly.
 - [`docs/Difficulty Framework v0.9 (EN).md`](docs/Difficulty%20Framework%20v0.9%20%28EN%29.md) — full derivation, parameters, calibration, limitations
 - [`docs/Difficulty Framework v0.9 (ZH).md`](docs/Difficulty%20Framework%20v0.9%20%28ZH%29.md) — 中文版
 
+## Can you help?
+
+Two things would improve this a lot, and both are quick:
+
+- **Challenge results** — "I lasted 3:40 on *Bigmoney*", or "*Rezorecta*: cleared".
+  Several people on the same work beats many works from one person. Anonymous is fine.
+  This is the only way the ordering can be validated; right now the model has a single
+  anchor.
+- **Segment beat tables** — any work you can measure, in the format shown in
+  [`examples/template.csv`](beatbar_score/examples/template.csv).
+
+Open an [issue](../../issues) or a pull request. Details:
+[`beatbar_score/README_EN.md`](beatbar_score/README_EN.md#help-make-it-more-accurate).
+
 ## Status
 
 Model v0.9. The calibration rests on a single anchor (SBT 06 at 740 s), and several

@@ -1,0 +1,57 @@
+name: Submit a beat table
+description: Add a work to the score database (CSV or xlsx)
+title: "[Table] <work name>"
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Columns needed: **start, end, beats** and optionally **per8**
+        (`per8` = how many beats fall inside each 8-beat phrase, e.g. 13).
+
+        `per8` is worth filling in: a stopwatch is only accurate to a second and the
+        error accumulates, while `per8 × BPM / 480` has no accumulated error.
+
+        Rough tables are welcome too — 30-second segments are perfectly usable.
+  - type: input
+    id: work
+    attributes:
+      label: Work
+      placeholder: Bigmoney
+    validations:
+      required: true
+  - type: input
+    id: length
+    attributes:
+      label: Length (seconds)
+      placeholder: "298"
+    validations:
+      required: true
+  - type: input
+    id: total
+    attributes:
+      label: Total beats (if known)
+      placeholder: "872"
+  - type: input
+    id: bpm
+    attributes:
+      label: BPM (if known)
+      placeholder: "129.2"
+  - type: textarea
+    id: table
+    attributes:
+      label: Table
+      description: Paste the CSV here, or attach an .xlsx / .csv file
+      render: csv
+      placeholder: |
+        start,end,beats,per8
+        0,7.3,8,4
+        7.3,14.6,16,8
+        14.6,22,18,9
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything odd about this work? (optional)
+      description: BPM changes, holds, weird counter behaviour, etc.
